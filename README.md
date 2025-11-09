@@ -1,1 +1,1 @@
-# my_sway_config
+# my_dots_sway_config
