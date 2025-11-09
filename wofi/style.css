@@ -1,0 +1,45 @@
+/*@import ('file:///home/andrey/.cache/wal/colors.css');*/
+@import "/home/andrey/.cache/wal/colors-waybar.css";
+
+* {
+	border-radius: 3px;
+	border: none;
+}
+
+window {
+	font-size: 17px;
+	font-family: "DejaVu Sans Mono", monospace;
+	color: @foreground;
+        background-color: @background; 
+}
+
+#entry{
+	padding: 0.25em;
+}
+
+#entry:selected {
+	background-color: @background;
+	color: @color2;
+	border-radius:0px;
+}
+
+#expander-box {
+	background-color: @background;
+	color: @color3;
+}
+
+#text:selected {
+        background-color: @background;
+	color: @color3;
+}
+
+#input{
+	background-color: @background;
+	color: @cursor;
+	padding: 0.25em;
+}
+
+image{
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+}

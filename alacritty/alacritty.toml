@@ -1,0 +1,40 @@
+general.import = ["~/.cache/wal$/colors-alacritty.toml"]
+
+
+# Window settings
+
+
+[window]
+padding = { x = 5, y = 5 } # Padding around the terminal content
+opacity = 0.92 # Window opacity (0.0 - 1.0)
+decorations = "full" # Window decorations (full, transparent, none)
+
+# Font settings 
+# >>> Uncomment ALL LINE below to change font you have
+[font]
+size = 12.0
+[font.normal]
+family = "DejaVu Sans Mono"
+style = "Regular"
+[font.bold]
+family = "DejaVu Sans Mono" 
+style = "Bold"
+[font.italic]
+family = "DejaVu Sans Mono" 
+style = "Italic"
+[font.bold_italic]
+family = "DejaVu Sans Mono" 
+style = "Bold Italic"
+
+[scrolling]
+history = 10000 # Maximum number of lines in scrollback buffer
+multiplier = 3 # Number of lines scrolled per increment
+
+# Key bindings
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Alt|Shift", action = "SpawnNewInstance" }, # Spawn new instance
+  { key = "Space", mods = "Alt|Shift", action = "ToggleViMode" }, # Toggle Vi mode
+  { key = "C", mods = "Alt|Shift", action = "Copy" },
+  { key = "V", mods = "Alt|Shift", action = "Paste" },]
+
