@@ -8,9 +8,9 @@ bar {
 exec --no-startup-id dex -a -e sway 
 exec /usr/libexec/polkit-mate-authentication-agent-1
 exec_always ~/.azotebg
+
 exec /home/andrey/.local/bin/wal -R
 exec_always swaync &
-#exec_always ~/.config/sway/import-gsettings
 
 ### FONTS
 font pango:DejaVu Sans Mono 12
@@ -19,7 +19,6 @@ font pango:DejaVu Sans Mono 12
 
 output HDMI1 pos 0 0 res 1920x1080
 output eDP1 pos 1920 0 res 1920x1080
-
 set $primary_output eDP1
 set $secondary_output HDMI1
 for_window [workspace="^([13579][0-9]*)$"] move workspace to output "$primary_output"
@@ -29,12 +28,15 @@ for_window [workspace="^([246810][0-9]*)$"] move workspace to output "$secondary
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+    gsettings set $gnome-schema gtk-theme 'Arc-Dark'
+    gsettings set $gnome-schema gtk-color-theme 'Arc-Dark'
+    gsettings set $gnome-schema cursor-theme 'elementary'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema font-name 'DejaVu Sans Mono 12'
 }
 
-seat seat0 xcursor_theme Breeze_Light 24
+seat seat0 xcursor_theme elementary 24
+
 
 ### WINDOWS
 
@@ -45,8 +47,8 @@ title_align center
 titlebar_border_thickness 3
 titlebar_padding 3
 
-for_window [app_id="^.*"] title_format "%title"
-for_window [class=".*"] title_format "%title"
+#for_window [app_id="^.*"] title_format "%title"
+#for_window [class=".*"] title_format "%title"
 for_window [class=".*"] border none
 for_window [app_id="^.*"] border pixel 3
 #for_window [class="zen"] move container to workspace number 2
@@ -127,15 +129,15 @@ set $menu exec wofi --show drun
     bindsym $mod+Shift+r exec swaymsg reload
 
 
-mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
-  bindsym l exec swaymsg exit
-  bindsym r exec systemctl reboot
-  bindsym s exec systemctl poweroff -i
-  bindsym Escape mode "default"
-  bindsym Return mode "default"
-}
-bindsym $mod+x mode "exit: [l]ogout, [r]eboot, [s]hutdown"
-
+#mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
+#  bindsym l exec swaymsg exit
+#  bindsym r exec systemctl reboot
+#  bindsym s exec systemctl poweroff -i
+#  bindsym Escape mode "default"
+#  bindsym Return mode "default"
+#}
+#bindsym $mod+x mode "exit: [l]ogout, [r]eboot, [s]hutdown"
+bindsym $mod+x exec wlogout 
 #
 # Moving around:
 #
