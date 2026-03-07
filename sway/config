@@ -13,7 +13,9 @@ exec /home/andrey/.local/bin/wal -R
 exec_always swaync &
 
 ### FONTS
+
 font pango:DejaVu Sans Mono 12
+#font pango:Sans Regular 12
 
 ### OUTPUT CONFIGURATION
 
@@ -33,6 +35,7 @@ exec_always {
     gsettings set $gnome-schema cursor-theme 'elementary'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema font-name 'DejaVu Sans Mono 12'
+    #gsettings set $gnome-schema font-name 'Sans Regular 12'
 }
 
 seat seat0 xcursor_theme elementary 24
@@ -54,7 +57,7 @@ for_window [app_id="^.*"] border pixel 3
 #for_window [class="zen"] move container to workspace number 2
 #for_window [class="steam"] move container to workspace number 1
 #for_window [app_id=".telegram."] move container to workspace number 1
-
+for_window [app_id="org.gnome.Calendar"] floating enable,move absolute position x=0 y=0, resize set width=200 height=200
 ### ADJUSTING BORDERS
 
 default_border none
@@ -257,19 +260,20 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 
 #bar {
-#    position top
-#    colors {
-#        statusline #ffffff
-#        background #282828E6
-#        inactive_workspace #282936BF #282936BF #5c5c5c
-#    }
-#    status_command i3status
+    #position top
+    #colors {
+	#statusline #ffffff
+	#background #282828E6
+	#inactive_workspace #282936BF #282936BF #5c5c5c
+    #}
+    #status_command i3status
 #}
+
 #bar {
- #       status_command i3status -c /home/andrey/.config/i3/i3status/i3status.conf
-#	position bottom
-#        font pango:DejaVu Sans Mono, FontAwesome 12
-#	height 30
+	#status_command i3status -c /home/andrey/.config/i3/i3status/i3status.conf
+	#position bottom
+	#font pango:DejaVu Sans Mono, FontAwesome 12
+	#height 30
 #}
 
 include /etc/sway/config-vars.d/*

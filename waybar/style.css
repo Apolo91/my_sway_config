@@ -2,16 +2,18 @@
 *
 {
   font-family: "DejaVu Sans Mono", monospace;
+  /*font-family: "Monospace";*/
   font-size: 18px;
   color: @foreground;
 }
 window#waybar {
-  background: @background;
-  /*background: transparent;*/
+ background: @background;
+ /*background: transparent;*/
+/*background: @color1;*/
 }
 
 #keyboard-state, #language, #pulseaudio, #backlight, #clock, #battery, #network, #tray {
-   padding: 1px 6px;
+ padding: 1px 6px;
 }
 
 

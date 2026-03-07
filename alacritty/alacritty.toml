@@ -6,7 +6,7 @@ general.import = ["~/.cache/wal$/colors-alacritty.toml"]
 
 [window]
 padding = { x = 5, y = 5 } # Padding around the terminal content
-opacity = 0.92 # Window opacity (0.0 - 1.0)
+opacity = 0.7 # Window opacity (0.0 - 1.0)
 decorations = "full" # Window decorations (full, transparent, none)
 
 # Font settings 
