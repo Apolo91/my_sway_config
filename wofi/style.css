@@ -3,7 +3,7 @@
 
 * {
 	border-radius: 3px;
-	border: none;
+	border: 3px;
 }
 
 window {
@@ -18,23 +18,23 @@ window {
 }
 
 #entry:selected {
-	background-color: @background;
+	background-color: transparent;
 	color: @color2;
 	border-radius:0px;
 }
 
 #expander-box {
-	background-color: @background;
+	background-color: @color1;
 	color: @color3;
 }
 
 #text:selected {
-        background-color: @background;
+        background-color: transparent;
 	color: @color3;
 }
 
 #input{
-	background-color: @background;
+	background-color: transparent;
 	color: @cursor;
 	padding: 0.25em;
 }
